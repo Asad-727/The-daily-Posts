@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Edit Post - Daily Posts</title>
+
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <div class="form-container">
+
+        <h1>Edit Post</h1>
+
+        <!-- Update Post -->
+        <form action="/posts/<%= post._id %>?_method=PUT" method="POST">
+
+            <label for="username">Username</label>
+
+            <input
+                type="text"
+                id="username"
+                name="username"
+                value="<%= post.username %>"
+                required
+            >
+
+            <label for="content">Content</label>
+
+            <textarea
+                id="content"
+                name="content"
+                rows="6"
+                required
+            ><%= post.content %></textarea>
+
+            <button type="submit">Update Post</button>
+
+        </form>
+
+
+        <!-- Delete Post -->
+        <form
+            action="/posts/<%= post._id %>?_method=DELETE"
+            method="POST"
+            class="delete-form"
+        >
+
+            <button type="submit" class="delete-btn">
+                Delete Post
+            </button>
+
+        </form>
+
+
+        <a href="/posts" class="back-link">
+            ← Back to Posts
+        </a>
+
+    </div>
+
+</body>
+
+</html>
