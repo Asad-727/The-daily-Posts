@@ -15,14 +15,14 @@ const Post = require("./models/schema");
 const app = express();
 const port = 3002;
 
-// const mongoDB_URI = "mongodb://127.0.0.1:27017/dailyPosts";
+// const mongoDB_URL = "mongodb://127.0.0.1:27017/dailyPosts";
 
-const mongoDB_URI = process.env.ATLASDB_URI;
+const mongoDB_URL = process.env.ATLASDB_URI;
 
 
 // MongoDB Connection
 async function main() {
-    await mongoose.connect(mongoDB_URI).then(()=>{
+    await mongoose.connect(mongoDB_URL).then(()=>{
         console.log("Connect DB Successful");
     }).catch((err)=>{
         console.log(err)
@@ -46,7 +46,7 @@ app.use(methodOverride("_method"));
 
 
 // Home / All Posts
-app.get("/", async (req, res) => {
+app.get("/posts", async (req, res) => {
     const posts = await Post.find();
 
     res.render("home", { posts });
