@@ -16,12 +16,11 @@ const app = express();
 const port = 3002;
 
 // const mongoDB_URL = "mongodb://127.0.0.1:27017/dailyPosts";
-const mongoDB_URL = process.env.ATLASDB_URL;
 
 
 // MongoDB Connection
 async function main() {
-    await mongoose.connect(mongoDB_URL).then(()=>{
+    await mongoose.connect(process.env.ATLASDB_URL).then(()=>{
         console.log("Connect DB Successful");
     }).catch((err)=>{
         console.log(err)
