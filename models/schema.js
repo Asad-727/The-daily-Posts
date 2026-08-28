@@ -1,24 +1,3 @@
-// const mongoose = require("mongoose");
-// const Schema = mongoose.Schema;
-
-// const postSchema = new Schema({
-//     username:{
-//         type: String,
-//     },
-//     content:{
-//         type: String,
-//     },
-//     like: {
-//         type: Boolean,
-//     }
-// });
-
-// const Post = mongoose.model("Post", postSchema);
-
-// module.exports = Post;
-
-///////////////////////
-
 const mongoose = require("mongoose");
 
 const postSchema = new mongoose.Schema({
