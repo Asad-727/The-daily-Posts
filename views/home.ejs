@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Daily Posts</title>
+
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <h1>Daily Posts</h1>
+
+    <div class="top-button">
+        <a href="/posts/new">
+            <button>Create a New Post</button>
+        </a>
+    </div>
+
+    <hr>
+
+    <% for (let post of posts) { %>
+
+        <div class="post">
+
+            <h3><%= post.username %></h3>
+
+            <p>
+                <strong>Content:</strong>
+                <%= post.content %>
+            </p>
+
+            <p>
+                ❤️ Likes: <%= post.like %>
+            </p>
+
+            <div class="buttons">
+
+               
+
+                <form action="/posts/<%= post._id %>/like" method="POST">
+                    <button type="submit">Like</button>
+                </form>
+
+                <a href="/posts/<%= post._id %>/edit">
+                    <button>Edit</button>
+                </a> 
+                
+                <a href="/posts/<%= post._id %>">
+                    <button>Share</button>
+                </a>
+
+            </div>
+
+        </div>
+
+    <% } %>
+
+</body>
+
+</html>

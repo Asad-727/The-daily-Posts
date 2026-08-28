@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Post - Daily Posts</title>
+
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <div class="form-container">
+
+        <h1>Create a New Post</h1>
+
+        <form action="/posts" method="POST">
+
+            <label for="username">Username</label>
+            <input
+                type="text"
+                id="username"
+                name="username"
+                placeholder="Enter username"
+                required
+            >
+
+            <label for="content">Content</label>
+            <textarea
+                id="content"
+                name="content"
+                placeholder="Write your post..."
+                rows="6"
+                required
+            ></textarea>
+
+            <button type="submit">Create Post</button>
+
+        </form>
+
+        <a href="/posts" class="back-link">← Back to Posts</a>
+
+    </div>
+
+</body>
+
+</html>

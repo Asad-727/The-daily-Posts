@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Post - Daily Posts</title>
+
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <div class="post-container">
+
+        <h1>Daily Posts</h1>
+
+        <div class="single-post">
+
+            <h2><%= post.username %></h2>
+
+            <p>
+                <strong>Content:</strong>
+                <%= post.content %>
+            </p>
+
+            <p>
+                ❤️ Likes: <%= post.like %>
+            </p>
+
+            <div class="buttons">
+
+                <form action="/posts/<%= post._id %>/like" method="POST">
+                    <button type="submit">Like</button>
+                </form>
+
+                <a href="/posts/<%= post._id %>/edit">
+                    <button>Edit</button>
+                </a>
+
+                <a href="/posts">
+                    <button>Back</button>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
