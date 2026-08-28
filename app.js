@@ -44,7 +44,7 @@ app.use(methodOverride("_method"));
 
 
 // Home / All Posts
-app.get("/posts", async (req, res) => {
+app.get("/", async (req, res) => {
     const posts = await Post.find();
 
     res.render("home", { posts });
